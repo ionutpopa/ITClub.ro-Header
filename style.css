@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 150ms ease;
+  font-size: 25px;
+  color: white;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+a:hover {
+  transition: 150ms ease;
+  color: #00fff2;
+}
+
+a:after {
+  color: #00fff2;
+  content: "";
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 2px solid;
+  margin-top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  -webkit-transform: scale(0, 2);
+  transform: scale(0, 2);
+}
+
+a:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.navbar-container {
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+  background-color: #009eb9;
+}
+
+.left-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-row a {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.right-row {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ham {
+  display: none;
+  cursor: pointer;
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  transition: stroke-dasharray 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.line-2 {
+  stroke-dasharray: 50 60;
+  stroke-width: 6;
+}
+
+.line-3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.opened .line-1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.opened .line-2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+
+.opened .line-3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #004b6e;
+  position: relative;
+}
+
+.topnav #links {
+  display: none;
+}
+
+.topnav a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+@keyframes open {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 106px;
+  }
+}
+
+@keyframes close {
+  0% {
+    height: 106px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .ham {
+    display: flex;
+  }
+  .navbar-container {
+    padding: 20px;
+  }
+  .right-row {
+    display: none;
+  }
+  a::after {
+    display: none;
+    color: inherit;
+  }
+  a:hover {
+    color: white;
+  }
+}
